@@ -1,0 +1,60 @@
+#:kivy 2.1.0
+<Aksioma>:
+    MDFloatLayout:
+        md_bg_color: ("#FFFFFF")
+        MDLabel:
+            text: "Perhitungan Hasil Kali Dalam"
+            halign: "center"
+            font_size: "45sp"
+            font_name: "TTSlabs"
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            color: ("#979647ff")
+        MDTextField:
+            id: u
+            hint_text: "Masukkan vektor u (contoh: 1 2 3)"
+            mode: "rectangle"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.78}
+        MDTextField:
+            id: v
+            hint_text: "Masukkan vektor v (contoh: 4 5 6)"
+            mode: "rectangle"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.68}
+        MDTextField:
+            id: w
+            hint_text: "Masukkan vektor w (contoh: 1 1 1)"
+            mode: "rectangle"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.58}
+        MDTextField:
+            id: k
+            hint_text: "Masukkan skalar k (contoh: 3)"
+            mode: "rectangle"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.5, "center_y": 0.48}
+        MDRaisedButton:
+            text: "Hitung Aksioma"
+            font_name: "Roboto"
+            md_bg_color: ("#979647ff")
+            pos_hint: {"center_x": 0.5, "center_y": 0.38}
+            on_release: root.hitung()
+        MDLabel:
+            id: hasil
+            text: "Hasil aksioma akan muncul di sini."
+            halign: "left"
+            font_size: "18sp"
+            font_name: "Roboto"
+            pos_hint: {"center_x": 0.9, "center_y": 0.23}
+            color: ("#000000")
+        MDRaisedButton:
+            text: "Kembali"
+            halign: "center"
+            font_size: "17sp"
+            font_name: "Monradok"
+            size_hint: 0.07, 0.05
+            pos_hint: {"center_x": 0.04, "center_y": 0.97}
+            md_bg_color: ("#979647ff")
+            on_release:
+                app.root.transition.direction = "right"
+                app.root.current = app.root.previous()
